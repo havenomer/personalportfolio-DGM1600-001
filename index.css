@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.navlist {
+    display: flex;
+    justify-content: flex-end;
+}
+
+h1 {
+  color: navy;
+}
