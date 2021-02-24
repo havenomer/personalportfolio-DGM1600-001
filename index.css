@@ -1,7 +1,17 @@
+:root {
+    --blue-gray: #3A5578;
+    --teal-gray: #4d6976;
+    --forrest-green: #374025;
+    --dark-green: #1D2710;
+    --gray: #bfbfbf;
+    --light-gray: #d9d9d9;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13,7 +23,7 @@ body {
     display: flex;
     justify-content: flex-end;
     position: fixed;
-    background-color: cornflowerblue;
+    background-color: var(--dark-green);
 }
 
 .navlist {
@@ -26,10 +36,12 @@ body {
     display: block;
     font-size: 1.5em;
     padding: .75em .5em;
+    color: var(--light-gray);
 }
 
 .navlist a:hover {
-    background-color: seagreen;
+    background-color: var(--teal-gray);
+    color: var(--dark-green);
 }
 
 #welcome-section {
@@ -37,8 +49,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(22, 10, 85);
-    color: #fff;
+    background-color: var(--blue-gray);
+    color: var(--light-gray);
     width: 100%;
     height: 100vh;
 }
@@ -47,18 +59,53 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--light-gray);
+    height: 600px;
 }
 
 .project-tile {
-    margin: 1em;
+    margin: 1.25em;
 }
 
 .project-tile:hover {
-    color:coral;
+    color: var(--teal-gray);
 }
 
 figcaption {
     text-align: center;
+}
+
+figcaption > span {
+    font-size: 1.25em;
+}
+
+#contact {
+    color: var(--gray);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--forrest-green);
+    height: 300px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-links a {
+    margin: 1em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--dark-green);
+    color: var(--gray);
+    height: 65px;
 }
 
 a {
