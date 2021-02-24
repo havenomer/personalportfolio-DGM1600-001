@@ -1,17 +1,17 @@
 :root {
-    --blue-gray: #3A5578;
-    --teal-gray: #4d6976;
-    --forrest-green: #374025;
-    --dark-green: #1D2710;
-    --gray: #bfbfbf;
-    --light-gray: #d9d9d9;
+  --blue-gray: #3a5578;
+  --teal-gray: #4d6976;
+  --forrest-green: #374025;
+  --dark-green: #1d2710;
+  --gray: #bfbfbf;
+  --light-gray: #d9d9d9;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,113 +19,159 @@ body {
 }
 
 #navbar {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    background-color: var(--dark-green);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  background-color: var(--dark-green);
+  z-index: 10;
 }
 
 .navlist {
-    display: flex;
-    list-style: none;
-    
+  display: flex;
+  list-style: none;
 }
 
 .navlist a {
-    display: block;
-    font-size: 1.5em;
-    padding: .75em .5em;
-    color: var(--light-gray);
+  display: block;
+  font-size: 1.5em;
+  padding: 0.75em 0.5em;
+  color: var(--light-gray);
 }
 
 .navlist a:hover {
-    background-color: var(--teal-gray);
-    color: var(--dark-green);
+  background-color: var(--teal-gray);
+  color: var(--dark-green);
 }
 
 #welcome-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--blue-gray);
-    color: var(--light-gray);
-    width: 100%;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-gray);
+  font-size: 3rem;
+  color: var(--light-gray);
+  width: 100%;
+  height: 100vh;
+}
+
+#welcome-section > p {
+  margin: 2rem;
+  font-size: 1.65rem;
 }
 
 #projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--light-gray);
-    height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--light-gray);
+  height: 800px;
+}
+
+#projects a {
+  color: var(--dark-green);
 }
 
 .project-tile {
-    margin: 1.25em;
+  margin: 1.25em;
 }
 
-.project-tile:hover {
-    color: var(--teal-gray);
+.caption-details {
+  color: var(--teal-gray);
+  transition: transform 0.25s ease-in-out;
+}
+
+.caption-details:hover {
+  transform: translateY(-10px);
 }
 
 figcaption {
-    text-align: center;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  text-align: center;
+  background-color: var(--gray);
 }
 
 figcaption > span {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 #contact {
-    color: var(--gray);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--forrest-green);
-    height: 300px;
+  color: var(--gray);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--forrest-green);
+  height: 300px;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-header > h2 {
+  font-size: 3rem;
+  padding: 8px;
+}
+
+.contact-header > p {
+  font-size: 1.15rem;
 }
 
 .contact-links {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: var(--light-gray);
 }
 
 .contact-links a {
-    margin: 1em;
+  margin: 1em;
+  color: var(--light-gray);
+}
+
+.contact-details {
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(-5px);
 }
 
 footer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--dark-green);
-    color: var(--gray);
-    height: 65px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--dark-green);
+  color: var(--gray);
+  height: 65px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 @media (max-width: 1200px) {
-    html {
-        font-size: 100%;
-    }
+  html {
+    font-size: 100%;
+  }
 }
 
 @media (max-width: 980px) {
-    html {
-        font-size: 80%;
-    }
+  html {
+    font-size: 80%;
+  }
 }
 
 @media (max-width: 500px) {
-    html {
-        font-size: 50%;
-    }
+  html {
+    font-size: 50%;
+  }
 }
