@@ -1,0 +1,1 @@
+/* Variables - containers that store values */
