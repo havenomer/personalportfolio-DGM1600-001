@@ -30,4 +30,10 @@ let myNum2 = 45.69
 
 let myBool = true
 
+// Array
+
+let myArray = [] // this is an empty array
+
+let myArray2 = [42, 'Bob', myBool, ANSWER, true]
+
 

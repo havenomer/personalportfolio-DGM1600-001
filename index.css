@@ -67,7 +67,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--light-gray);
-  height: 800px;
+  height: 70vh;
 }
 
 #projects a {
@@ -88,6 +88,7 @@ body {
 }
 
 figcaption {
+  position: relative;
   font-size: 1.2rem;
   padding: 0.6rem;
   text-align: center;
@@ -105,7 +106,7 @@ figcaption > span {
   flex-direction: column;
   align-items: center;
   background-color: var(--forrest-green);
-  height: 300px;
+  height: 60vh;
 }
 
 .contact-header {
@@ -151,7 +152,7 @@ footer {
   align-items: center;
   background-color: var(--dark-green);
   color: var(--gray);
-  height: 65px;
+  height: 5vh;
 }
 
 a {
