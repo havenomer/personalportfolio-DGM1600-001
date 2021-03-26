@@ -2,13 +2,22 @@
     margin: 0;
 }
 
+header {
+    text-align: center;
+    color: white;
+    font-size: 42pt;
+    font-family: orbitron;
+}
+
 body {
     background-color: black;
 }
 
 #filmList {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    
 }
 
 figure {
@@ -16,7 +25,9 @@ figure {
 }
 
 figcaption {
+    font-size: 1.25em;
     text-align: center;
+    font-family: orbitron;
     background-color: black;
     color: white;
 }
