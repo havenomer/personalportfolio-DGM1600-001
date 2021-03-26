@@ -16,11 +16,17 @@ main {
     height: 100vh; */
 }
 
+.starshipHeader {
+    color: white;
+    font-size: 42pt;
+    font-family: orbitron;
+}
+
 nav {
     width: 200px;
 }
 
-img, nav {
+img, nav, .starshipHeader {
     position: relative;
     z-index: 1;
 }
