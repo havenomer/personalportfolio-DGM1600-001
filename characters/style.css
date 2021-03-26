@@ -1,13 +1,41 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    background-color: black;
 }
 
 #main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.charHeader {
+    text-align: center;
+    font-size: 42pt;
+    font-family: orbitron;
+    font-weight: 700;
+    color: white;
+}
+
+button {
+    align-content: center;
+    font-size: 1.5em;
+    font-family: orbitron;
+    color: white;
+}
+
+button:hover {
+    color: gold;
 }
 
 figure > img {
     height: 200px;
+    margin: 16px 16px 0px 16px;
+}
+
+figcaption {
+    text-align: center;
+    font-family: orbitron;
+    color: white;
 }
