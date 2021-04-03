@@ -65,3 +65,6 @@ const myCar = {
 const theFunction = () => { //multiple lines use curly braces and 'return' keyword
     'I am awesome'
 }
+
+
+// Need to add more things to the code journal
