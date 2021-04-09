@@ -68,3 +68,5 @@ const theFunction = () => { //multiple lines use curly braces and 'return' keywo
 
 
 // Need to add more things to the code journal
+
+// Seriously, I will start catching up this weekend
