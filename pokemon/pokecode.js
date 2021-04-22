@@ -22,25 +22,29 @@ function loadPage() {
       for (const singlePokemon of data.results) {
         await getAPIData(singlePokemon.url).then((pokeData) =>
           populatePokeCard(pokeData)
-        )
+        );
       }
     }
   );
 }
 
 function populatePokeCard(singlePokemon) {
-  console.log(singlePokemon);
+  //console.log(singlePokemon);
   let pokeScene = document.createElement("div");
   pokeScene.className = "scene";
   let pokeCard = document.createElement("div");
   pokeCard.className = "card";
-
+  pokeCard.addEventListener('click', () => {
+    pokeCard.classList.toggle('is-flipped')
+  })
   pokeCard.appendChild(populateCardFront(singlePokemon));
+  pokeCard.appendChild(populateCardBack(singlePokemon));
   pokeScene.appendChild(pokeCard);
   pokeGrid.appendChild(pokeScene);
 }
 
 function populateCardFront(pokemon) {
+  console.log(pokemon);
   let pokeFront = document.createElement("div");
   pokeFront.className = "card__face card__face--front";
   let frontLabel = document.createElement("p");
@@ -53,10 +57,19 @@ function populateCardFront(pokemon) {
   return pokeFront;
 }
 
+function populateCardBack(pokemon) {
+  let pokeBack = document.createElement("div");
+  pokeBack.className = "card__face card__face--back";
+  let backLabel = document.createElement("p");
+  backLabel.textContent = `Moves: ${pokemon.moves.length}`;
+  pokeBack.appendChild(backLabel);
+  return pokeBack;
+}
+
 function getImageFileName(pokemon) {
   if (pokemon.id < 10) {
-    return `00${pokemon.id}`
+    return `00${pokemon.id}`;
   } else if (pokemon.id > 9 && pokemon.id < 100) {
-    return `0${pokemon.id}`
+    return `0${pokemon.id}`;
   }
 }
