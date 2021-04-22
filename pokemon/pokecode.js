@@ -14,6 +14,8 @@ class Pokemon {
   }
 }
 
+loadButton.addEventListener('click', () => loadPage())
+
 newButton.addEventListener("click", () => {
   let pokeName = prompt('What is the name of your new Pokemon?')
   let pokeHeight = prompt('What is the height of your new Pokemon?')
