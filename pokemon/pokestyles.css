@@ -4,6 +4,46 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0px 20px;
+    background: linear-gradient(90deg, rgb(129, 33, 33), rgb(30, 30, 105));
+}
+
+#header-content {
+    margin: 20px;
+   display: inline-flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 48px;
+   color: white;
+}
+
+.div-title {
+    padding-left: 8vw;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(255, 228, 78);
+}
+
+#styleButtons {
+    padding: 0px 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loadPokemon,
+#fetchSelectedPokemon, 
+#newPokemon {
+    color: rgb(255, 228, 78);
+    background-color: rgb(14, 6, 88);
+    margin-block:;
+    font-family: 'Press Start 2P', sans-serif;
+    display:inline-flex;
+    padding: 10px;
+    margin: 12px;
+    font-size: 16px;
+}
+
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +53,7 @@
 .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid #ccc;
+    border: 4px solid rgb(255, 228, 78);
     margin: 10px;
     perspective: 600px;
 }
@@ -41,6 +81,8 @@
   }
 
   .card__face--front {
+      font-size: 14px;
+      font-family: 'Press Start 2P', sans-serif;
     /* background: red; */
   }
 
@@ -49,7 +91,7 @@
       width: 190px;
   }
   
-  .card__face--back {
+  .card__face--back {    
     background: rgb(219, 219, 219);
     transform: rotateY(180deg);
   }
