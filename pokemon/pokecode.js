@@ -4,7 +4,7 @@ const fetchButton = document.querySelector("#fetchSelectedPokemon");
 const newButton = document.querySelector("#newPokemon");
 
 class Pokemon {
-  constructor(name, height, weight, abilities, moves, types) {
+  constructor(name, height, weight, abilities, moves, types, stats) {
     this.id = 900;
     this.name = name;
     this.height = height;
@@ -12,6 +12,7 @@ class Pokemon {
     this.abilities = abilities;
     this.moves = moves;
     this.types = types;
+    this.stats = stats;
   }
 }
 
@@ -21,9 +22,11 @@ newButton.addEventListener("click", () => {
   let pokeName = prompt("What is the name of your new Pokemon?");
   // let pokeHeight = prompt("What is the height of your new Pokemon?");
   // let pokeWeight = prompt("What is the weight of your new Pokemon?");
-  let pokeAbilities = prompt("What are the abilities of your new Pokemon? (use a comma separated list)");
-  let pokeMove = prompt("What is your Pokemon's best move?")
-  let abilitiesArray = getAbilitiesArray(pokeAbilities)
+  let pokeAbilities = prompt(
+    "What are the abilities of your new Pokemon? (use a comma separated list)"
+  );
+  let pokeMove = prompt("What is your Pokemon's best move?");
+  let abilitiesArray = getAbilitiesArray(pokeAbilities);
   let newPokemon = new Pokemon(
     pokeName,
     80,
@@ -32,32 +35,41 @@ newButton.addEventListener("click", () => {
     [
       {
         move: {
-          name: pokeMove
-        }
-      }
+          name: pokeMove,
+        },
+      },
     ],
     [
       {
         type: {
           name: "normal",
         },
-      }
+      },
+    ],
+    [
+      {
+        base_stat: "100",
+
+        stat: {
+          name: "hp",
+        },
+      },
     ]
   );
+  console.log(newPokemon);
   populatePokeCard(newPokemon);
 });
 
 function getAbilitiesArray(commaString) {
-  let tempArray = commaString.split(',')
+  let tempArray = commaString.split(",");
   return tempArray.map((abilityName) => {
     return {
       ability: {
-        name: abilityName
-      }
-    }
-  })
+        name: abilityName,
+      },
+    };
+  });
 }
-
 
 fetchButton.addEventListener("click", () => {
   let pokeNameOrId = prompt("Enter Pokemon ID or Name:").toLowerCase();
@@ -114,9 +126,12 @@ function populateCardFront(pokemon) {
   let frontImage = document.createElement("img");
   frontImage.src = getImageFileName(pokemon);
 
-  frontImage.addEventListener('error', (err) => frontImage.src = 'images/pokeball_PNG.png')
+  frontImage.addEventListener(
+    "error",
+    (err) => (frontImage.src = "images/pokeball_PNG.png")
+  );
 
-  typesBackground(pokemon, pokeFront)
+  typesBackground(pokemon, pokeFront);
 
   pokeFront.appendChild(frontLabel);
   pokeFront.appendChild(frontImage);
@@ -141,34 +156,34 @@ function typesBackground(pokemon, card) {
 function populateCardBack(pokemon) {
   let pokeBack = document.createElement("div");
   pokeBack.className = "card__face card__face--back";
-  typesBackground(pokemon, pokeBack)
+  typesBackground(pokemon, pokeBack);
   let backLabel = document.createElement("p");
   backLabel.textContent = `Moves: ${pokemon.moves.length}`;
   pokeBack.appendChild(backLabel);
 
-  let typeLabel = document.createElement('h3')
-  typeLabel.textContent = "Types:"
-  pokeBack.appendChild(typeLabel)
+  let typeLabel = document.createElement("h3");
+  typeLabel.textContent = "Types:";
+  pokeBack.appendChild(typeLabel);
 
   pokemon.types.forEach((pokeType) => {
     let backType = document.createElement("p");
     backType.textContent = pokeType.type.name;
     pokeBack.appendChild(backType);
   });
-  let abilityLabel = document.createElement('h3')
-  abilityLabel.textContent = "Abilities:"
-  pokeBack.appendChild(abilityLabel)
+  let abilityLabel = document.createElement("h3");
+  abilityLabel.textContent = "Abilities:";
+  pokeBack.appendChild(abilityLabel);
   pokemon.abilities.forEach((pokeAbility) => {
-    let ability = document.createElement('p')
-    ability.textContent = pokeAbility.ability.name
-    pokeBack.appendChild(ability)
-  })
+    let ability = document.createElement("p");
+    ability.textContent = pokeAbility.ability.name;
+    pokeBack.appendChild(ability);
+  });
 
   pokemon.stats.forEach((stat) => {
-    let statPara = document.createElement('p')
-    statPara.textContent = `${stat.stat.name} : ${stat.base_stat}`
-    pokeBack.appendChild(statPara)
-  })
+    let statPara = document.createElement("p");
+    statPara.textContent = `${stat.stat.name} : ${stat.base_stat}`;
+    pokeBack.appendChild(statPara);
+  });
   return pokeBack;
 }
 
