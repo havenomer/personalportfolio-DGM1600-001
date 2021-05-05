@@ -1,9 +1,17 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    background-color: rgb(27, 27, 75);
+}
+
+h1 {
+    margin: 15px;
+    color: crimson;
 }
 
 .congressGrid {
+    
+    margin: 15px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -13,6 +21,7 @@
     margin: 6px;
     border: 1px red solid;
     box-shadow: 3px 3px 3px black;
+    background-color: white;
 }
 
 figure {
@@ -20,5 +29,22 @@ figure {
 }
 
 figcaption {
+    background-color: white;
     text-align: center;
+}
+
+#buttonHeader {
+    margin: 0px 20px;
+}
+
+#seniorityButton,
+#birthdayButton,
+#missedVotes,
+#partyHack {
+    border-radius: 25px;
+    margin: 20px;
+    padding: 10px;
+    color: black;
+    font-size: 16pt;
+    background-color: white;
 }
